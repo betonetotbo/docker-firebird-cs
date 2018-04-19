@@ -1,0 +1,14 @@
+version: '3'
+services:
+  firebird-cs:
+    image: localhost:5000/firebird-cs
+    build: 
+      context: ./
+    ports:
+      - 6666:3050    
+    environment:
+      ISC_PASSWORD: masterkey
+    volumes:
+      - firebird-cs-data:/data
+volumes:
+  firebird-cs-data:
